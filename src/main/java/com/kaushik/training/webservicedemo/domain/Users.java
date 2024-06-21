@@ -5,11 +5,24 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-public class Users {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+ 
 
+@Entity(name = "user_details")
+public class Users {
+	
+	//why protected?
+	protected Users() {
+		
+	}
+
+	@Id
+	@GeneratedValue
 	private int userId;
 	
-	@JsonProperty("user-name")
+//	@JsonProperty("user-name")
 	private String userName;
 	private LocalDate userDOB;
 
