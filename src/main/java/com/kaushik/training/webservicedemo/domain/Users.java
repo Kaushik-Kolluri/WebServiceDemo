@@ -1,30 +1,35 @@
 package com.kaushik.training.webservicedemo.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
- 
+import jakarta.persistence.OneToMany;
 
 @Entity(name = "user_details")
 public class Users {
-	
-	//why protected?
+
+	// why protected?
 	protected Users() {
-		
+
 	}
 
 	@Id
 	@GeneratedValue
 	private int userId;
-	
+
 //	@JsonProperty("user-name")
 	private String userName;
 	private LocalDate userDOB;
+
+	@OneToMany(mappedBy = "users")
+	@JsonIgnore
+	private List<Posts> posts;
 
 	public Users(int userId, String userName, LocalDate userDOB) {
 		super();
@@ -57,9 +62,17 @@ public class Users {
 		this.userDOB = userDOB;
 	}
 
+	public List<Posts> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Posts> posts) {
+		this.posts = posts;
+	}
+
 	@Override
 	public String toString() {
-		return "Users [userId=" + userId + ", userName=" + userName + ", userDOB=" + userDOB + "]";
+		return "Users [userId=" + userId + ", userName=" + userName + ", userDOB=" + userDOB + ", posts=" + posts + "]";
 	}
 
 }

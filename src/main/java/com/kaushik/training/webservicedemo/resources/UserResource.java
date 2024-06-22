@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.kaushik.training.com.webservicedemo.dao.UserDaoService;
+import com.kaushik.training.webservicedemo.dao.UserDaoService;
 import com.kaushik.training.webservicedemo.domain.Users;
 import com.kaushik.training.webservicedemo.exceptions.UserNotFoundException;
 

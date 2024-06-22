@@ -6,3 +6,12 @@ VALUES(2, current_date(), 'Durvas');
 
 INSERT INTO USER_DETAILS(USER_ID, USERDOB, USER_NAME)
 VALUES(3, current_date(), 'Princy');
+
+INSERT INTO POSTS(POST_ID, USERS_USER_ID, POST_DESCRIPTION)
+VALUES (10, 1, 'Charles just won the Monaco GP!');
+
+INSERT INTO POSTS(POST_ID, USERS_USER_ID, POST_DESCRIPTION)
+VALUES (20, 2, 'Perez is out of Q3 again!!!');
+
+INSERT INTO POSTS(POST_ID, USERS_USER_ID, POST_DESCRIPTION)
+VALUES (30, 3, 'Waiting for the Taylor''s new album!');
